@@ -1,0 +1,28 @@
+@mixin horizontal {
+  .horizontal {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    position: relative;
+    &__position h3,
+    p {
+      margin: 8px;
+    }
+    .coeur {
+      margin: auto 2%;
+    }
+    .prix {
+      margin: auto 2% 8px 0;
+    }
+  }
+}
+
+@mixin boutongradient {
+  a {
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    background: linear-gradient($secondaire, $primaire);
+    padding: 15px;
+  }
+}
