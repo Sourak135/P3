@@ -1,8 +1,17 @@
 @keyframes pulse {
   0% {
-    background-color: #001f3f;
   }
   100% {
     background-color: #ff4136;
+  }
+}
+@keyframes load {
+  0% {
+    background-color: white;
+    color: transparent;
+  }
+  100% {
+    background-color: white;
+    color: green;
   }
 }

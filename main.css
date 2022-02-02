@@ -1,7 +1,44 @@
+@charset "UTF-8";
 /*couleurs*/
 /*breakpoints*/
 /*variable transitions*/
-@use "./sass/utils/keyframes";
+@-webkit-keyframes pulse {
+  0% {
+  }
+  100% {
+    background-color: #ff4136;
+  }
+}
+@keyframes pulse {
+  0% {
+  }
+  100% {
+    background-color: #ff4136;
+  }
+}
+
+@-webkit-keyframes load {
+  0% {
+    background-color: white;
+    color: transparent;
+  }
+  100% {
+    background-color: white;
+    color: green;
+  }
+}
+
+@keyframes load {
+  0% {
+    background-color: white;
+    color: transparent;
+  }
+  100% {
+    background-color: white;
+    color: green;
+  }
+}
+
 /*polices*/
 @font-face {
   font-family: "roboto regular";
@@ -14,10 +51,29 @@
           box-sizing: border-box;
 }
 
+.chargement {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 100px;
+  color: transparent;
+  -webkit-animation: load 3s;
+          animation: load 3s;
+}
+
 header,
 main,
 footer {
-  max-width: 375px;
+  width: 375px;
   margin: 0 auto;
 }
 
@@ -258,6 +314,7 @@ footer {
           box-shadow: 2px 5px 3px #d4d3d3;
 }
 
+/*pas intéressant de mettre le footer en layout pour une seule page css sauf pour s'exercer*/
 footer {
   background-color: #2f2f2f;
   color: white;
@@ -284,12 +341,5 @@ footer .foot a i {
   width: 16px;
   height: 20px;
   margin-right: 15px;
-}
-
-.chargement {
-  width: 100%;
-  height: 100%;
-  -webkit-animation: pulse 5s infinite;
-          animation: pulse 5s infinite;
 }
 /*# sourceMappingURL=main.css.map */
