@@ -2,40 +2,38 @@
 /*couleurs*/
 /*breakpoints*/
 /*variable transitions*/
-@-webkit-keyframes pulse {
-  0% {
-  }
-  100% {
-    background-color: #ff4136;
-  }
-}
-@keyframes pulse {
-  0% {
-  }
-  100% {
-    background-color: #ff4136;
-  }
-}
-
 @-webkit-keyframes load {
   0% {
     background-color: white;
     color: transparent;
+    z-index: 3;
+  }
+  90% {
+    background-color: white;
+    color: green;
+    z-index: 3;
   }
   100% {
     background-color: white;
-    color: green;
+    color: transparent;
+    z-index: -10;
   }
 }
-
 @keyframes load {
   0% {
     background-color: white;
     color: transparent;
+    z-index: 3;
+  }
+  90% {
+    background-color: white;
+    color: green;
+    z-index: 3;
   }
   100% {
     background-color: white;
-    color: green;
+    color: transparent;
+    z-index: -10;
   }
 }
 
@@ -51,8 +49,13 @@
           box-sizing: border-box;
 }
 
+header {
+  position: relative;
+}
+
 .chargement {
   position: absolute;
+  z-index: -1;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -66,8 +69,8 @@
           align-items: center;
   font-size: 100px;
   color: transparent;
-  -webkit-animation: load 3s;
-          animation: load 3s;
+  -webkit-animation: load 2s;
+          animation: load 2s;
 }
 
 header,
@@ -133,6 +136,7 @@ footer {
   background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
   background: linear-gradient(#ff79da, #9356dc);
   padding: 15px;
+  z-index: 2;
 }
 
 .fonctionnement {
@@ -184,6 +188,7 @@ footer {
 }
 
 .restaurant__card {
+  z-index: 1;
   background-color: white;
   height: 250px;
   margin: 3%;
@@ -276,6 +281,7 @@ footer {
   background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
   background: linear-gradient(#ff79da, #9356dc);
   padding: 15px;
+  z-index: 2;
 }
 
 .nourriture {

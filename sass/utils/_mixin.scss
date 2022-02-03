@@ -24,5 +24,20 @@
     border-radius: 30px;
     background: linear-gradient($secondaire, $primaire);
     padding: 15px;
+    z-index: 2;
+  }
+}
+@mixin chargement {
+  .chargement {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: transparent;
+    animation: load 2s;
   }
 }
