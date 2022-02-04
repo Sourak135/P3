@@ -12,6 +12,11 @@ header {
 }
 
 @include chargement;
+.fonctionnement,
+.restaurant,
+footer {
+  animation: move 2s;
+}
 
 header,
 main,
