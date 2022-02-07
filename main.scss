@@ -21,32 +21,54 @@ footer {
 header,
 main,
 footer {
-  width: 375px;
+  min-width: 375px;
   margin: 0 auto;
 }
-
 .entete {
-  display: flex;
+  position: relative;
 }
-.entete img,
-.entete2 img {
+.entete img {
   width: 100%;
+  max-height: 400px;
   object-fit: cover;
 }
-.test {
+
+.chevau {
+  text-align: center;
+  padding: 1%;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-radius: 30px 30px 0 0;
+}
+
+.abc {
+  height: 10%;
+  .centre {
+    width: 30px;
+    margin: auto 3%;
+    .fleche {
+      font-size: 5vm;
+      position: absolute;
+    }
+  }
+}
+.image-titre {
+  text-align: center;
+  padding: 1% 0;
   img {
-    width: 60%;
-    margin: auto;
+    max-width: 40%;
   }
 }
 .localisation {
   background-color: rgb(221, 221, 221);
   display: flex;
-  /*justify-content: center;*/
+  justify-content: center;
   padding: 10px 0;
   input {
     outline: none;
-    padding: 0;
+    padding: 0 2%;
     border: 0px;
     background-color: inherit;
   }
@@ -122,7 +144,6 @@ footer {
   }
 }
 
-/*test*/
 .coeurvide {
   position: absolute;
   top: auto;
@@ -130,17 +151,14 @@ footer {
   bottom: auto;
   z-index: 2;
 }
-
 .coeurvide:hover {
   color: purple;
 }
 
 .menu {
-  overflow: hidden;
-  padding-top: 27px;
   background-color: rgb(241, 241, 241);
-  border-radius: 15px 15px 0 0;
   .titre {
+    border-radius: 15px 15px 0 0;
     display: flex;
     justify-content: space-between;
     font-style: italic;
@@ -156,16 +174,76 @@ footer {
   }
   @include boutongradient;
 }
+
+.entree {
+  animation: apparition 300ms;
+}
+.plat {
+  animation: apparition 600ms;
+}
+.dessert {
+  animation: apparition 900ms;
+}
+
 .nourriture {
   @include horizontal;
-  margin: 10% 0;
+  margin: 2% 0;
   .horizontal {
+    /*
+    text-overflow: ellipsis;
+    */
     background-color: white;
     margin: 3%;
     border-radius: 15px;
     box-shadow: 2px 5px 3px rgb(212, 211, 211);
+    overflow: hidden;
+    position: relative;
+    .survol {
+      background-color: transparent;
+      position: absolute;
+      right: -200px;
+      width: 200px;
+      height: 100%;
+      text-align: center;
+    }
+    &:hover {
+      .survol {
+        animation: prix 2s;
+      }
+    }
   }
 }
-
+.commande {
+  text-align: center;
+  padding: 3%;
+}
 /*pas intéressant de mettre le footer en layout pour une seule page css sauf pour s'exercer*/
 @include footer;
+
+@media (min-width: $tablette) {
+  .restaurant {
+    &__position {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__card {
+      width: 45%;
+      margin: 2% auto;
+    }
+  }
+  .titre {
+    text-align: center;
+  }
+  .liens {
+    display: flex;
+    li {
+      width: 25%;
+      text-align: center;
+    }
+  }
+}
+@media (min-width: $ordi) {
+  body {
+    max-width: 1600px;
+  }
+}

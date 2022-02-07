@@ -37,40 +37,64 @@
 
 @-webkit-keyframes move {
   0% {
-    -webkit-transform: translatey(-9999px);
-            transform: translatey(-9999px);
-  }
-  100% {
-    -webkit-transform: translatey(0);
-            transform: translatey(0);
-  }
-  /* autre idée pour ne pas voir le texte en dessous du chargement en cas de scroll
-  0% {
     opacity: 0;
   }
   100% {
     opacity: 0;
   }
-  */
 }
 
 @keyframes move {
   0% {
-    -webkit-transform: translatey(-9999px);
-            transform: translatey(-9999px);
+    opacity: 0;
   }
   100% {
-    -webkit-transform: translatey(0);
-            transform: translatey(0);
+    opacity: 0;
   }
-  /* autre idée pour ne pas voir le texte en dessous du chargement en cas de scroll
+}
+
+@-webkit-keyframes apparition {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 0;
   }
-  */
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes prix {
+  0% {
+    -webkit-transform: translatex(0);
+            transform: translatex(0);
+    background-color: green;
+  }
+  100% {
+    -webkit-transform: translatex(-200px);
+            transform: translatex(-200px);
+    background-color: green;
+  }
+}
+
+@keyframes prix {
+  0% {
+    -webkit-transform: translatex(0);
+            transform: translatex(0);
+    background-color: green;
+  }
+  100% {
+    -webkit-transform: translatex(-200px);
+            transform: translatex(-200px);
+    background-color: green;
+  }
 }
 
 /*polices*/
@@ -119,26 +143,52 @@ footer {
 header,
 main,
 footer {
-  width: 375px;
+  min-width: 375px;
   margin: 0 auto;
 }
 
 .entete {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  position: relative;
 }
 
-.entete img,
-.entete2 img {
+.entete img {
   width: 100%;
+  max-height: 400px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.test img {
-  width: 60%;
-  margin: auto;
+.chevau {
+  text-align: center;
+  padding: 1%;
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-radius: 30px 30px 0 0;
+}
+
+.abc {
+  height: 10%;
+}
+
+.abc .centre {
+  width: 30px;
+  margin: auto 3%;
+}
+
+.abc .centre .fleche {
+  font-size: 5vm;
+  position: absolute;
+}
+
+.image-titre {
+  text-align: center;
+  padding: 1% 0;
+}
+
+.image-titre img {
+  max-width: 40%;
 }
 
 .localisation {
@@ -146,13 +196,15 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /*justify-content: center;*/
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 10px 0;
 }
 
 .localisation input {
   outline: none;
-  padding: 0;
+  padding: 0 2%;
   border: 0px;
   background-color: inherit;
 }
@@ -275,7 +327,6 @@ footer {
      object-fit: cover;
 }
 
-/*test*/
 .coeurvide {
   position: absolute;
   top: auto;
@@ -289,13 +340,11 @@ footer {
 }
 
 .menu {
-  overflow: hidden;
-  padding-top: 27px;
   background-color: #f1f1f1;
-  border-radius: 15px 15px 0 0;
 }
 
 .menu .titre {
+  border-radius: 15px 15px 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -327,8 +376,23 @@ footer {
   z-index: 2;
 }
 
+.entree {
+  -webkit-animation: apparition 300ms;
+          animation: apparition 300ms;
+}
+
+.plat {
+  -webkit-animation: apparition 600ms;
+          animation: apparition 600ms;
+}
+
+.dessert {
+  -webkit-animation: apparition 900ms;
+          animation: apparition 900ms;
+}
+
 .nourriture {
-  margin: 10% 0;
+  margin: 2% 0;
 }
 
 .nourriture .horizontal {
@@ -356,39 +420,99 @@ footer {
 }
 
 .nourriture .horizontal {
+  /*
+    text-overflow: ellipsis;
+    */
   background-color: white;
   margin: 3%;
   border-radius: 15px;
   -webkit-box-shadow: 2px 5px 3px #d4d3d3;
           box-shadow: 2px 5px 3px #d4d3d3;
+  overflow: hidden;
+  position: relative;
+}
+
+.nourriture .horizontal .survol {
+  background-color: transparent;
+  position: absolute;
+  right: -200px;
+  width: 200px;
+  height: 100%;
+  text-align: center;
+}
+
+.nourriture .horizontal:hover .survol {
+  -webkit-animation: prix 2s;
+          animation: prix 2s;
+}
+
+.commande {
+  text-align: center;
+  padding: 3%;
 }
 
 /*pas intéressant de mettre le footer en layout pour une seule page css sauf pour s'exercer*/
 footer {
   color: white;
   background-color: #2f2f2f;
+  padding: 1% 0%;
 }
 
-footer .foot {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+footer .titre {
   margin: 0 3%;
+  padding: 1% 0;
+  font-family: Shrikhand, Arial;
 }
 
-footer .foot a {
-  text-decoration: none;
-  color: white;
+footer .liens {
+  list-style: none;
+  padding: 0 3%;
+}
+
+footer .liens li {
   margin: 5px 0;
 }
 
-footer .foot a i {
+footer .liens a {
+  text-decoration: none;
+  color: white;
+}
+
+footer .liens a i {
   width: 16px;
   height: 20px;
   margin-right: 15px;
+}
+
+@media (min-width: 992px) {
+  .restaurant__position {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .restaurant__card {
+    width: 45%;
+    margin: 2% auto;
+  }
+  .titre {
+    text-align: center;
+  }
+  .liens {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .liens li {
+    width: 25%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    max-width: 1600px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

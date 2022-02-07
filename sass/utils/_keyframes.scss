@@ -17,17 +17,29 @@
 
 @keyframes move {
   0% {
-    transform: translatey(-9999px);
+    opacity: 0;
   }
   100% {
-    transform: translatey(0);
+    opacity: 0;
   }
-  /* autre idée pour ne pas voir le texte en dessous du chargement en cas de scroll
+}
+
+@keyframes apparition {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 0;
   }
-  */
+}
+
+@keyframes prix {
+  0% {
+    transform: translatex(0);
+    background-color: green;
+  }
+  100% {
+    transform: translatex(-200px);
+    background-color: green;
+  }
 }
