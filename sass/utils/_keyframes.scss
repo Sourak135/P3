@@ -1,26 +1,21 @@
 @keyframes load {
   0% {
-    background-color: white;
     color: transparent;
-    z-index: 3;
   }
-  90% {
-    background-color: white;
+  50% {
     color: green;
-    z-index: 3;
   }
   100% {
-    background-color: white;
     color: transparent;
   }
 }
 
-@keyframes move {
+@keyframes load2 {
   0% {
-    opacity: 0;
+    transform: translatex(0);
   }
   100% {
-    opacity: 0;
+    transform: translatex(100%);
   }
 }
 
@@ -33,13 +28,13 @@
   }
 }
 
-@keyframes prix {
-  0% {
-    transform: translatex(0);
-    background-color: green;
+@keyframes prix2 {
+  from {
+    width: 0%;
+    background-color: $tertiaire;
   }
-  100% {
-    transform: translatex(-200px);
-    background-color: green;
+  to {
+    width: 100%;
+    background-color: $tertiaire;
   }
 }
