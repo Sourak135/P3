@@ -8,9 +8,6 @@
     p {
       margin: 8px;
     }
-    .coeur {
-      margin: auto 2%;
-    }
     .prix {
       margin: auto 2% 8px 0;
     }
@@ -23,10 +20,11 @@
     text-decoration: none;
     border-radius: 30px;
     background: linear-gradient($secondaire, $primaire);
-    padding: 15px;
-    z-index: 2;
+    padding: 15px 70px;
+    box-shadow: 2px 5px 3px rgb(212, 211, 211);
   }
 }
+/*
 @mixin chargement {
   .chargement {
     position: absolute;
@@ -73,3 +71,4 @@
     }
   }
 }
+*/

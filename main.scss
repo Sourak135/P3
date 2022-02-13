@@ -75,25 +75,25 @@ body {
   object-fit: cover;
 }
 
-.chevau {
+.chapeau {
   text-align: center;
-  padding: 1%;
-  background-color: green;
+  padding: 15px;
+  background-color: rgb(241, 241, 241);
   position: absolute;
   bottom: 0;
   width: 100%;
-  border-radius: 30px 30px 0 0;
+  border-radius: 60px 60px 0 0;
 }
 
 .abc {
   height: 10%;
-  .centre {
-    width: 30px;
-    margin: auto 3%;
-    .fleche {
-      font-size: 5vm;
-      position: absolute;
-    }
+  position: relative;
+  .fleche {
+    font-size: 4vw;
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    color: black;
   }
 }
 .image-titre {
@@ -134,13 +134,11 @@ body {
     padding: 0 px;
   }
   .bouton {
-    display: flex;
-    border: solid 1px rgb(218, 218, 218);
-    border-radius: 18px;
-    margin-bottom: 40px;
-    box-shadow: 2px 5px 3px rgb(212, 211, 211);
+    position: relative;
+    height: 100%;
     .numero {
-      margin: auto 0 auto 0;
+      position: absolute;
+      top: 24%;
       width: 26px;
       height: 26px;
       padding: 4px;
@@ -149,13 +147,26 @@ body {
       color: white;
       text-align: center;
     }
-    .icone {
-      margin: auto 15px auto 15px;
-      color: grey;
-    }
-    p {
-      .align {
+    .encart {
+      display: flex;
+      border: solid 1px rgb(218, 218, 218);
+      border-radius: 18px;
+      margin-bottom: 40px;
+      margin-left: 1em;
+      padding: 0 1em;
+      box-shadow: 2px 5px 3px rgb(212, 211, 211);
+      .icone {
         margin: auto 15px auto 15px;
+        color: grey;
+      }
+      p {
+        .align {
+          margin: auto 15px auto 15px;
+        }
+      }
+      &:hover {
+        background-color: lighten($primaire, 35%);
+        box-shadow: 2px 5px 3px darken(rgb(212, 211, 211), 20%);
       }
     }
   }
@@ -167,8 +178,9 @@ body {
     margin: 3%;
   }
   &__card {
-    z-index: 1;
+    position: relative;
     background-color: white;
+    box-shadow: 2px 5px 3px rgb(212, 211, 211);
     height: 250px;
     margin: 3%;
     border-radius: 15px;
@@ -185,21 +197,32 @@ body {
     object-fit: cover;
   }
 }
-
-.coeurvide {
+/*position des coeurs vides et pleins l'un sur l'autre*/
+.coeurvide,
+.coeurplein {
   position: absolute;
-  top: auto;
+  top: 35%;
   right: 3%;
-  bottom: auto;
-  z-index: 2;
 }
-.coeurvide:hover {
-  color: purple;
+
+.coeurplein {
+  color: transparent;
+}
+.coeur:hover {
+  .coeurvide {
+    transition: all 2s;
+    color: transparent;
+  }
+  .coeurplein {
+    transition: all 2s;
+    color: purple;
+  }
 }
 
 .menu {
   background-color: rgb(241, 241, 241);
   .titre {
+    position: relative;
     border-radius: 15px 15px 0 0;
     display: flex;
     justify-content: space-between;
@@ -213,8 +236,15 @@ body {
   }
   h2 {
     margin: 1% 3%;
+    border-bottom: 3px $tertiaire solid;
+    width: 2em;
   }
   @include boutongradient;
+  .commande {
+    text-align: center;
+    margin: 3% auto 0 auto;
+    padding: 40px 0 70px 0;
+  }
 }
 
 .entree {
@@ -281,10 +311,15 @@ body {
   }
 }
 
-.commande {
-  text-align: center;
-  padding: 3%;
+.nouveau {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: $tertiaire;
+  color: darken($tertiaire, 45%);
+  padding: 1% 2%;
 }
+
 /*pas intéressant de mettre le footer en layout pour une seule page css sauf pour s'exercer*/
 @include footer;
 
@@ -299,7 +334,7 @@ body {
       margin: 2% auto;
     }
   }
-  .titre {
+  .titre-footer {
     text-align: center;
   }
   .liens {

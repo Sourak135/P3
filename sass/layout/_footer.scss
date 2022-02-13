@@ -3,10 +3,12 @@
     color: white;
     background-color: rgb(47, 47, 47);
     padding: 1% 0%;
-    .titre {
+    margin-bottom: 1%;
+    .titre-footer {
       margin: 0 3%;
       padding: 1% 0;
       font-family: $titre;
+      letter-spacing: 3px;
     }
     .liens {
       list-style: none;
