@@ -533,16 +533,23 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  min-width: 0;
+  /*solutionne bug entre flex et white-space:nowrap*/
 }
 
 .nourriture .horizontal__responsive .horizontal__position {
-  width: 80%;
-  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 80%;
 }
 
 .nourriture .horizontal__responsive .horizontal__position h3,
 .nourriture .horizontal__responsive .horizontal__position p {
-  min-width: 30px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

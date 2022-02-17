@@ -273,12 +273,13 @@ body {
       display: flex;
       justify-content: space-between;
       width: 100%;
+      min-width: 0; /*solutionne bug entre flex et white-space:nowrap*/
       .horizontal__position {
-        width: 80%;
-        background-color: red;
+        display: flex;
+        flex-direction: column;
+        max-width: 80%;
         h3,
         p {
-          min-width: 30px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
