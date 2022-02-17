@@ -7,56 +7,49 @@
 * {
   box-sizing: border-box;
 }
-header,
-main,
-footer {
-  animation: blind 3s;
-}
+
 .chargement {
+  position: fixed;
+  z-index: 10;
   width: 100%;
   height: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: transparent;
   background-color: white;
-  /*
-  z-index: -1;
-  opacity: 0;
-  */
-  /*font-size: 0px;*/
-  color: red; /*pour vérif*/
-  animation: taille-div 3s;
+  animation: taille-div 1.6s;
   span {
-    animation: load 2s linear;
+    animation: load 1s linear;
     &:nth-child(1) {
-      animation-delay: 0.1s;
+      animation-delay: 50ms;
     }
     &:nth-child(2) {
-      animation-delay: 0.2s;
+      animation-delay: 100ms;
     }
     &:nth-child(3) {
-      animation-delay: 0.3s;
+      animation-delay: 150ms;
     }
     &:nth-child(4) {
-      animation-delay: 0.4s;
+      animation-delay: 200ms;
     }
     &:nth-child(5) {
-      animation-delay: 0.5s;
+      animation-delay: 250ms;
     }
     &:nth-child(6) {
-      animation-delay: 0.6s;
+      animation-delay: 300ms;
     }
     &:nth-child(7) {
-      animation-delay: 0.7s;
+      animation-delay: 350ms;
     }
     &:nth-child(8) {
-      animation-delay: 0.8s;
+      animation-delay: 400ms;
     }
     &:nth-child(9) {
-      animation-delay: 0.9s;
+      animation-delay: 450ms;
     }
     &:nth-child(10) {
-      animation-delay: 1s;
+      animation-delay: 500ms;
     }
   }
 }
@@ -78,7 +71,6 @@ body {
   max-height: 400px;
   object-fit: cover;
 }
-
 .chapeau {
   text-align: center;
   padding: 15px;
@@ -89,13 +81,15 @@ body {
   border-radius: 60px 60px 0 0;
 }
 
-.abc {
-  height: 10%;
-  position: relative;
+.image-titre {
+  img {
+    position: relative;
+  }
   .fleche {
-    font-size: 4vw;
+    font-size: 20px;
     position: absolute;
-    top: 20%;
+    top: 50%;
+    margin-top: -10px;
     left: 5%;
     color: black;
     &:hover {
@@ -128,7 +122,7 @@ body {
   font-family: $texte;
   text-align: center;
   background-color: rgb(241, 241, 241);
-  padding: 40px 20px;
+  padding: 5em 20px;
   h1 {
     margin: 0;
   }
@@ -138,8 +132,9 @@ body {
   @include boutongradient;
 }
 .fonctionnement {
-  margin: 0 3%;
+  margin: 2em 3%;
   h2 {
+    margin: auto 1em;
     padding: 0 px;
   }
   .bouton {
@@ -147,8 +142,9 @@ body {
     height: 100%;
     .numero {
       position: absolute;
-      top: 24%;
+      top: 50%;
       width: 26px;
+      margin-top: -13px;
       height: 26px;
       padding: 4px;
       border-radius: 50%;
@@ -160,8 +156,7 @@ body {
       display: flex;
       border: solid 1px rgb(218, 218, 218);
       border-radius: 18px;
-      margin-bottom: 40px;
-      margin-left: 1em;
+      margin: 1em 1em;
       padding: 0 1em;
       box-shadow: 2px 5px 3px rgb(212, 211, 211);
       .icone {
@@ -195,6 +190,11 @@ body {
     margin: 3%;
     border-radius: 15px;
     overflow: hidden;
+    &:hover {
+      scale: 1.01;
+      transition: all ease 0.2s;
+      box-shadow: 2px 5px 3px darken(rgb(212, 211, 211), 20%);
+    }
     a {
       text-decoration: none;
       color: black;
@@ -211,7 +211,8 @@ body {
 .coeurvide,
 .coeurplein {
   position: absolute;
-  top: 35%;
+  top: 50%;
+  margin-top: -10.6px;
   right: 3%;
 }
 .coeurplein {
@@ -227,48 +228,38 @@ body {
     color: purple;
   }
 }
-
+.titre {
+  background-color: rgb(241, 241, 241);
+  position: relative;
+  font-style: italic;
+  h1 {
+    margin: 0 3%;
+    padding: 0.67em;
+  }
+}
 .menu {
   background-color: rgb(241, 241, 241);
-  .titre {
-    position: relative;
-    border-radius: 15px 15px 0 0;
-    display: flex;
-    justify-content: space-between;
-    font-style: italic;
-    h1 {
-      margin: 3%;
-    }
-    i {
-      margin: auto 3% auto 0;
-    }
-  }
   h2 {
     margin: 1% 3%;
     border-bottom: 3px $tertiaire solid;
     width: 2em;
   }
-  @include boutongradient;
-  .commande {
-    text-align: center;
-    margin: 3% auto 0 auto;
-    padding: 40px 0 70px 0;
-  }
 }
 
 .entree {
-  animation: apparition 1s forwards;
+  animation: apparition 0.5s;
 }
 .plat {
-  animation: apparition 2s forwards;
+  animation: apparition 1s;
 }
 .dessert {
-  animation: apparition 3s forwards;
+  animation: apparition 1.5s;
 }
 
 .nourriture {
   @include horizontal;
-  margin: 2% 0;
+  margin: 0;
+  padding: 2% 0;
   .horizontal {
     height: 80px;
     background-color: white;
@@ -283,20 +274,20 @@ body {
       justify-content: space-between;
       width: 100%;
       .horizontal__position {
-        width: 80%;
+        background-color: red;
         h3,
         p {
-          white-space: nowrap;
+          min-width: 30px;
+
           overflow: hidden;
           text-overflow: ellipsis;
         }
       }
     }
-
     .survol2 {
       right: 0;
       width: 0%;
-      max-width: 25%;
+      max-width: 5em;
       height: 100%;
       position: relative;
       i {
@@ -309,7 +300,8 @@ body {
         animation: prix2 1s linear forwards;
         i {
           position: absolute;
-          top: 25%;
+          top: 50%;
+          margin-top: -23px;
           width: 100%;
           text-align: center;
           transform: rotate(360deg);
@@ -318,6 +310,13 @@ body {
       }
     }
   }
+}
+
+.commande {
+  @include boutongradient;
+  text-align: center;
+  margin: 3% auto 0 auto;
+  padding: 40px 0 70px 0;
 }
 
 .nouveau {
@@ -343,9 +342,20 @@ body {
       margin: 2% auto;
     }
   }
-  .titre-footer {
-    text-align: center;
+  .image-titre {
+    .fleche {
+      font-size: 30px;
+      margin-top: -15px;
+    }
   }
+  footer {
+    /*pour spécificité assez forte*/
+    .titre-footer {
+      text-align: center;
+      font-size: 1.5em;
+    }
+  }
+
   .liens {
     display: flex;
     li {
@@ -355,5 +365,23 @@ body {
   }
 }
 @media (min-width: $ordi) {
-  /*rien pour le moment*/
+  .fonctionnement {
+    display: flex;
+  }
+  .bouton {
+    width: 25%;
+  }
+  .image-titre {
+    .fleche {
+      font-size: 40px;
+      margin-top: -20px;
+    }
+  }
+  .menu {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .nourriture {
+    width: 30%;
+  }
 }

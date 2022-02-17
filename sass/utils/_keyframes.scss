@@ -4,7 +4,7 @@
     font-size: 100px;
   }
   50% {
-    color: green;
+    color: $secondaire;
     font-size: 100px;
   }
   100% {
@@ -12,14 +12,7 @@
     font-size: 100px;
   }
 }
-@keyframes blind {
-  0% {
-    display: none;
-  }
-  100% {
-    display: none;
-  }
-}
+
 @keyframes taille-div {
   /*0% {
     opacity: 1;
@@ -44,6 +37,9 @@
 
 @keyframes apparition {
   0% {
+    opacity: 0;
+  }
+  99% {
     opacity: 0;
   }
   100% {
