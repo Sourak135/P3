@@ -7,24 +7,27 @@
 * {
   box-sizing: border-box;
 }
-
+header,
+main,
+footer {
+  animation: blind 3s;
+}
 .chargement {
   width: 100%;
-  height: 0%;
+  height: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
-  color: green;
-  .lettre {
-    font-size: 100px;
-    animation: load2 2s linear;
-    /*
-    animation: name duration timing-function delay iteration-count direction fill-mode;
-    animation-name: load2;
-    animation-duration: 5s;
-    animation-timing-function: ease-in-out;
-    */
+  /*
+  z-index: -1;
+  opacity: 0;
+  */
+  /*font-size: 0px;*/
+  color: red; /*pour vérif*/
+  animation: taille-div 3s;
+  span {
+    animation: load 2s linear;
     &:nth-child(1) {
       animation-delay: 0.1s;
     }
@@ -61,6 +64,7 @@
 header {
   position: relative;
 }
+
 body {
   margin: 0 auto;
   min-width: 375px;
@@ -94,20 +98,25 @@ body {
     top: 20%;
     left: 5%;
     color: black;
+    &:hover {
+      scale: 1.1;
+      transition: all ease 0.2s;
+    }
   }
 }
 .image-titre {
   text-align: center;
-  padding: 1% 0;
   img {
     max-width: 40%;
+    padding: 1% 0;
   }
 }
 .localisation {
-  background-color: rgb(221, 221, 221);
+  background-color: rgb(233, 233, 233);
   display: flex;
   justify-content: center;
   padding: 10px 0;
+  box-shadow: 0 -2px rgb(212, 211, 211);
   input {
     outline: none;
     padding: 0 2%;
@@ -171,6 +180,7 @@ body {
     }
   }
 }
+
 .restaurant {
   background-color: rgb(241, 241, 241);
   padding: 3% 0;
@@ -204,7 +214,6 @@ body {
   top: 35%;
   right: 3%;
 }
-
 .coeurplein {
   color: transparent;
 }
@@ -248,13 +257,13 @@ body {
 }
 
 .entree {
-  animation: apparition 300ms;
+  animation: apparition 1s forwards;
 }
 .plat {
-  animation: apparition 600ms;
+  animation: apparition 2s forwards;
 }
 .dessert {
-  animation: apparition 900ms;
+  animation: apparition 3s forwards;
 }
 
 .nourriture {

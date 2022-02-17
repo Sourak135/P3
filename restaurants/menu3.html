@@ -10,46 +10,188 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">  
      <!--icones-->
      <script src="https://kit.fontawesome.com/b404e3b9aa.js" crossorigin="anonymous"></script>
-    <!--css-->
-    <link rel="stylesheet" href="../main.css">
     <!--Normalize-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!--css-->
+    <link rel="stylesheet" href="../main.css">
+
     <title>À la française</title>
 </head>
 <body>
     <header>
-        <a href="/index.html" class="accueil"><i class="fas fa-arrow-left"></i></a>
-        <img src="/images/ohmyfood.png" alt="logo ohmyfood">
-        <img src="/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Assiette gastronomique">
+        <div class="abc">              
+            <div class="image-titre">            
+                <img src="/images/ohmyfood.png" alt="logo ohmyfood">
+                <a href="/index.html" ><i class="fas fa-arrow-left fleche"></i></a>
+            </div>
+        </div>      
     </header>
     <main>
-        <h1>À la française</h1>
-        <div class="entrees">
-            <h2>Entrées</h2>
-            <div class="entree1"></div>
-            <div class="entree2"></div>
-            <div class="entree3"></div>
-        </div>
-        <div class="plats">
-            <h2>Plats</h2>
-            <div class="plat1"></div>
-            <div class="plat2"></div>
-            <div class="plat3"></div>
-        </div>
-        <div class="desserts">
-            <h2>Désserts</h2>
-            <div class="dessert1"></div>
-            <div class="dessert2"></div>
-            <div class="dessert3"></div>
-        </div>
+        <div class="menu">
+            <div class="entete">
+                <img src="/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Assiette gastronomique">
+                <div class="chapeau"></div>
+            </div> 
+            <div class="titre">
+                <h1>À la française</h1>
+                <div class="coeur">
+                    <i class="far fa-heart fa-lg coeurvide"></i>                           
+                    <i class="fas fa-heart fa-lg coeurplein"></i>
+                </div>
+            </div>
+            
+            <div class="nourriture entree">
+
+                <h2>Entrées</h2>                
+                <div class="horizontal">
+                    <div class="horizontal__responsive">
+                        <div class="horizontal__position">
+                            <h3 class="restaurant__nom">Tartare de poulpe acidulé</h3>
+                            <p>Aux zestes d'orange</p>
+                        </div>
+                        <div class="prix">
+                            25€
+                        </div>
+                    </div>
+                    <div class="survol2">                        
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>                           
+                <div class="horizontal">
+                    <div class="horizontal__responsive">
+                        <div class="horizontal__position">
+                            <h3 class="restaurant__nom">Velouté de légumes d'antan</h3>
+                            <p>Carotte, panais, topinambour</p>
+                        </div>
+                        <div class="prix">
+                            35€
+                        </div>
+                    </div>
+                    <div class="survol2">                        
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div> 
+                <div class="horizontal">
+                    <div class="horizontal__responsive">
+                        <div class="horizontal__position">
+                            <h3 class="restaurant__nom">Soupe à l'oignon</h3>
+                            <p>Revisitée</p>
+                        </div>
+                        <div class="prix">
+                            20€
+                        </div>
+                    </div>
+                    <div class="survol2">                        
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="nourriture plat">
+
+                <h2>Plats</h2>
+                <div class="horizontal">
+                    <div class="horizontal__responsive">
+                        <div class="horizontal__position">
+                            <h3 class="restaurant__nom">Coquilles Saint-Jacques</h3>
+                            <p>Accompagnées d'une purée de panais</p>
+                        </div>
+                        <div class="prix">
+                            40€
+                        </div>
+                    </div>
+                    <div class="survol2">                        
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div> <div class="horizontal">
+                    <div class="horizontal__responsive">
+                        <div class="horizontal__position">
+                            <h3 class="restaurant__nom">Magret de canard</h3>
+                            <p>Et parmentier de pommes de terre</p>
+                        </div>
+                        <div class="prix">
+                            35€
+                        </div>
+                    </div>
+                    <div class="survol2">                        
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div> <div class="horizontal">
+                    <div class="horizontal__responsive">
+                        <div class="horizontal__position">
+                            <h3 class="restaurant__nom">Pigeonneau d’Ille-et-Vilaine</h3>
+                            <p>Sur son lit de gnocchis aux légumes</p>
+                        </div>
+                        <div class="prix">
+                            44€
+                        </div>
+                    </div>
+                    <div class="survol2">                        
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="nourriture dessert">
+
+                <h2>Désserts</h2>
+                <div class="horizontal">
+                    <div class="horizontal__responsive">
+                        <div class="horizontal__position">
+                            <h3 class="restaurant__nom">Pétales de violettes glacés</h3>
+                            <p>Et purée de noisettes</p>
+                        </div>
+                        <div class="prix">
+                            18€
+                        </div>
+                    </div>
+                    <div class="survol2">                        
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+                <div class="horizontal">
+                    <div class="horizontal__responsive">
+                        <div class="horizontal__position">
+                            <h3 class="restaurant__nom">Fondant au chocolat</h3>
+                            <p>Revisité</p>
+                        </div>
+                        <div class="prix">
+                            22€
+                        </div>
+                    </div>
+                    <div class="survol2">                        
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+                <div class="horizontal">
+                    <div class="horizontal__responsive">
+                        <div class="horizontal__position">
+                            <h3 class="restaurant__nom">Millefeuille croustillant</h3>
+                            <p>Myrtilles et pâte d’amande</p>
+                        </div>
+                        <div class="prix">
+                            23€
+                        </div>
+                    </div>
+                    <div class="survol2">                        
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                </div>
+            </div> 
+            
+            <div class="commande"><a href="" class="nav">Commander</a></div>
+        </div>           
     </main>
     <footer>
         <div class="foot">
-            <h3 class="titre">ohmyfood</h3>
-            <a href=""><i class="fas fa-utensils"></i>Proposer un restaurant</a>
-            <a href=""><i class="fas fa-hands-helping"></i>Devenir partenaire</a>
-            <a href="">Mentions légales</a>
-            <a href="mailto:test@gmail.com">Contact</a>
+            <h3 class="titre-footer">ohmyfood</h3>
+            <ul class="liens">
+                <li><a href=""><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
+                <li><a href=""><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
+                <li><a href="">Mentions légales</a></li>
+                <li><a href="mailto:test@gmail.com">Contact</a></li>
+            </ul>
         </div>
-    </footer>
+    </footer> 
+</body>
 </html>

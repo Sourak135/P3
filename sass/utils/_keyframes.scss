@@ -1,21 +1,44 @@
 @keyframes load {
   0% {
     color: transparent;
+    font-size: 100px;
   }
   50% {
     color: green;
+    font-size: 100px;
   }
   100% {
     color: transparent;
+    font-size: 100px;
   }
 }
-
-@keyframes load2 {
+@keyframes blind {
   0% {
-    transform: translatex(0);
+    display: none;
   }
   100% {
-    transform: translatex(100%);
+    display: none;
+  }
+}
+@keyframes taille-div {
+  /*0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  95% {
+    z-index: 4;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }*/
+  from {
+    height: 100vh;
+  }
+  to {
+    height: 100vh;
   }
 }
 
@@ -27,7 +50,6 @@
     opacity: 1;
   }
 }
-
 @keyframes prix2 {
   from {
     width: 0%;
