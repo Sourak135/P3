@@ -274,11 +274,12 @@ body {
       justify-content: space-between;
       width: 100%;
       .horizontal__position {
+        width: 80%;
         background-color: red;
         h3,
         p {
           min-width: 30px;
-
+          white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
         }

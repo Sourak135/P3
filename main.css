@@ -536,12 +536,14 @@ body {
 }
 
 .nourriture .horizontal__responsive .horizontal__position {
+  width: 80%;
   background-color: red;
 }
 
 .nourriture .horizontal__responsive .horizontal__position h3,
 .nourriture .horizontal__responsive .horizontal__position p {
   min-width: 30px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
