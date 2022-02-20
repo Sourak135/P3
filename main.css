@@ -654,6 +654,10 @@ footer .liens a i {
   margin-right: 15px;
 }
 
+footer .liens a:hover {
+  text-decoration: underline;
+}
+
 @media (min-width: 768px) {
   .restaurant__position {
     display: -webkit-box;
