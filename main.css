@@ -320,16 +320,14 @@ body {
   color: white;
   text-decoration: none;
   border-radius: 30px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
-  background: linear-gradient(#ff79da, #9356dc);
+  background: linear-gradient(178deg, #ff79da, #9356dc);
   padding: 15px 70px;
   -webkit-box-shadow: 2px 5px 3px #d4d3d3;
           box-shadow: 2px 5px 3px #d4d3d3;
 }
 
 .accueil a:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#fface8), to(#ae80e5));
-  background: linear-gradient(#fface8, #ae80e5);
+  background: linear-gradient(178deg, #fface8, #ae80e5);
   -webkit-box-shadow: 2px 5px 3px #a29f9f;
           box-shadow: 2px 5px 3px #a29f9f;
 }
@@ -446,29 +444,43 @@ body {
 }
 
 /*position des coeurs vides et pleins l'un sur l'autre*/
-.coeurvide,
-.coeurplein {
+.coeur .coeurvide,
+.coeur .coeurplein {
   position: absolute;
-  /*top: 50%;
-  margin-top: -10.6px;*/
-  bottom: 32px;
+  top: 50%;
+  margin-top: -10.5px;
   right: 3%;
+  font-size: 1.3em;
+  -webkit-transition: all 2s;
+  transition: all 2s;
 }
 
-.coeurplein {
+.coeur .coeurvide {
+  z-index: 1;
+  background: white;
+}
+
+.coeur .coeurplein {
   color: transparent;
+  -webkit-background-clip: text;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background-image: linear-gradient(#9356dc, #ff79da);
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  opacity: 0;
 }
 
-.focus:focus .coeurvide {
-  -webkit-transition: all 1s;
-  transition: all 1s;
+.coeur:hover .coeurvide {
   color: transparent;
+  z-index: -1;
+  background-position: 0 -21px;
+  -webkit-transition: all 2s;
+  transition: all 2s;
 }
 
-.focus:focus .coeurplein {
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  color: #9356dc;
+.coeur:hover .coeurplein {
+  /*color: $primaire;*/
+  opacity: 1;
 }
 
 .titre {
@@ -610,16 +622,14 @@ body {
   color: white;
   text-decoration: none;
   border-radius: 30px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff79da), to(#9356dc));
-  background: linear-gradient(#ff79da, #9356dc);
+  background: linear-gradient(178deg, #ff79da, #9356dc);
   padding: 15px 70px;
   -webkit-box-shadow: 2px 5px 3px #d4d3d3;
           box-shadow: 2px 5px 3px #d4d3d3;
 }
 
 .commande a:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#fface8), to(#ae80e5));
-  background: linear-gradient(#fface8, #ae80e5);
+  background: linear-gradient(178deg, #fface8, #ae80e5);
   -webkit-box-shadow: 2px 5px 3px #a29f9f;
           box-shadow: 2px 5px 3px #a29f9f;
 }

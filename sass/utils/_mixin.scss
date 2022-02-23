@@ -18,7 +18,7 @@
     color: white;
     text-decoration: none;
     border-radius: 30px;
-    background: linear-gradient($secondaire, $primaire);
+    background: linear-gradient(178deg, $secondaire, $primaire);
 
     padding: 15px 70px;
     box-shadow: 2px 5px 3px rgb(212, 211, 211);
@@ -26,7 +26,7 @@
   a:hover {
     $prim-clair: lighten($primaire, 10%);
     $sec-clair: lighten($secondaire, 10%);
-    background: linear-gradient($sec-clair, $prim-clair);
+    background: linear-gradient(178deg, $sec-clair, $prim-clair);
     box-shadow: 2px 5px 3px darken(rgb(212, 211, 211), 20%);
   }
 }

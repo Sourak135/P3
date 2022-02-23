@@ -213,26 +213,38 @@ body {
   }
 }
 /*position des coeurs vides et pleins l'un sur l'autre*/
-.coeurvide,
-.coeurplein {
-  position: absolute;
-  /*top: 50%;
-  margin-top: -10.6px;*/
-  bottom: 32px;
-  right: 3%;
-}
-.coeurplein {
-  color: transparent;
-}
-
-.focus:focus {
+.coeur {
+  .coeurvide,
+  .coeurplein {
+    position: absolute;
+    top: 50%;
+    margin-top: -10.5px;
+    right: 3%;
+    font-size: 1.3em;
+    transition: all 2s;
+  }
   .coeurvide {
-    transition: all 1s;
-    color: transparent;
+    z-index: 1;
+    background: white;
   }
   .coeurplein {
-    transition: all 1s;
-    color: $primaire;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient($primaire, $secondaire);
+    transition: all 2s;
+    opacity: 0;
+  }
+  &:hover {
+    .coeurvide {
+      color: transparent;
+      z-index: -1;
+      background-position: 0 -21px;
+      transition: all 2s;
+    }
+    .coeurplein {
+      /*color: $primaire;*/
+      opacity: 1;
+    }
   }
 }
 
