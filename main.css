@@ -1,34 +1,49 @@
 @charset "UTF-8";
 /*couleurs*/
+/*$tertiaire: #73ccd8;*/
+/*test couleur*/
 /*breakpoints*/
+/*959px;*/
 /*variable transitions*/
 @-webkit-keyframes load {
   0% {
     color: transparent;
-    font-size: 100px;
+    font-size: 6vw;
   }
   50% {
-    color: #ff79da;
-    font-size: 100px;
+    color: #9356dc;
+    font-size: 6vw;
   }
   100% {
     color: transparent;
+    font-size: 6vw;
+  }
+  /*
+  100% {
+    color: $secondaire;
     font-size: 100px;
   }
+  */
 }
 @keyframes load {
   0% {
     color: transparent;
-    font-size: 100px;
+    font-size: 6vw;
   }
   50% {
-    color: #ff79da;
-    font-size: 100px;
+    color: #9356dc;
+    font-size: 6vw;
   }
   100% {
     color: transparent;
+    font-size: 6vw;
+  }
+  /*
+  100% {
+    color: $secondaire;
     font-size: 100px;
   }
+  */
 }
 
 @-webkit-keyframes taille-div {
@@ -141,71 +156,70 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   color: transparent;
   background-color: white;
-  -webkit-animation: taille-div 1.6s;
-          animation: taille-div 1.6s;
+  -webkit-animation: taille-div 2.6s;
+          animation: taille-div 2.6s;
 }
 
-.chargement span {
-  -webkit-animation: load 1s linear;
-          animation: load 1s linear;
+.chargement .centre {
+  position: absolute;
+  left: 30%;
+  /*margin-left: -3em;
+    left:50%;*/
 }
 
 .chargement span:nth-child(1) {
-  -webkit-animation-delay: 50ms;
-          animation-delay: 50ms;
+  -webkit-animation: load 2.45s ease 50ms;
+          animation: load 2.45s ease 50ms;
 }
 
 .chargement span:nth-child(2) {
-  -webkit-animation-delay: 100ms;
-          animation-delay: 100ms;
+  -webkit-animation: load 2.4s ease 100ms;
+          animation: load 2.4s ease 100ms;
 }
 
 .chargement span:nth-child(3) {
-  -webkit-animation-delay: 150ms;
-          animation-delay: 150ms;
+  -webkit-animation: load 2.35s ease 150ms;
+          animation: load 2.35s ease 150ms;
 }
 
 .chargement span:nth-child(4) {
-  -webkit-animation-delay: 200ms;
-          animation-delay: 200ms;
+  -webkit-animation: load 2.3s ease 200ms;
+          animation: load 2.3s ease 200ms;
 }
 
 .chargement span:nth-child(5) {
-  -webkit-animation-delay: 250ms;
-          animation-delay: 250ms;
+  -webkit-animation: load 2.25s ease 250ms;
+          animation: load 2.25s ease 250ms;
 }
 
 .chargement span:nth-child(6) {
-  -webkit-animation-delay: 300ms;
-          animation-delay: 300ms;
+  -webkit-animation: load 2.2s ease 300ms;
+          animation: load 2.2s ease 300ms;
 }
 
 .chargement span:nth-child(7) {
-  -webkit-animation-delay: 350ms;
-          animation-delay: 350ms;
+  -webkit-animation: load 2.15s ease 350ms;
+          animation: load 2.15s ease 350ms;
 }
 
 .chargement span:nth-child(8) {
-  -webkit-animation-delay: 400ms;
-          animation-delay: 400ms;
+  -webkit-animation: load 2.1s ease 400ms;
+          animation: load 2.1s ease 400ms;
 }
 
 .chargement span:nth-child(9) {
-  -webkit-animation-delay: 450ms;
-          animation-delay: 450ms;
+  -webkit-animation: load 2.05s ease 450ms;
+          animation: load 2.05s ease 450ms;
 }
 
 .chargement span:nth-child(10) {
-  -webkit-animation-delay: 500ms;
-          animation-delay: 500ms;
+  -webkit-animation: load 2s ease 500ms;
+          animation: load 2s ease 500ms;
 }
 
 header {
@@ -276,8 +290,8 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 10px 0;
-  -webkit-box-shadow: 0 -2px #d4d3d3;
-          box-shadow: 0 -2px #d4d3d3;
+  -webkit-box-shadow: 0 -2px lightgray;
+          box-shadow: 0 -2px lightgray;
 }
 
 .localisation input {
@@ -355,8 +369,8 @@ body {
   border-radius: 18px;
   margin: 1em 1em;
   padding: 0 1em;
-  -webkit-box-shadow: 2px 5px 3px #d4d3d3;
-          box-shadow: 2px 5px 3px #d4d3d3;
+  -webkit-box-shadow: 2px 5px 3px lightgray;
+          box-shadow: 2px 5px 3px lightgray;
 }
 
 .fonctionnement .bouton .encart .icone {
@@ -370,8 +384,8 @@ body {
 
 .fonctionnement .bouton .encart:hover {
   background-color: #f2eafb;
-  -webkit-box-shadow: 2px 5px 3px #a29f9f;
-          box-shadow: 2px 5px 3px #a29f9f;
+  -webkit-box-shadow: 2px 5px 3px #a0a0a0;
+          box-shadow: 2px 5px 3px #a0a0a0;
 }
 
 .restaurant {
@@ -386,8 +400,8 @@ body {
 .restaurant__card {
   position: relative;
   background-color: white;
-  -webkit-box-shadow: 2px 5px 3px #d4d3d3;
-          box-shadow: 2px 5px 3px #d4d3d3;
+  -webkit-box-shadow: 2px 5px 3px lightgray;
+          box-shadow: 2px 5px 3px lightgray;
   height: 250px;
   margin: 3%;
   border-radius: 15px;
@@ -398,8 +412,8 @@ body {
   scale: 1.01;
   -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
-  -webkit-box-shadow: 2px 5px 3px #a29f9f;
-          box-shadow: 2px 5px 3px #a29f9f;
+  -webkit-box-shadow: 2px 5px 3px #a0a0a0;
+          box-shadow: 2px 5px 3px #a0a0a0;
 }
 
 .restaurant__card a {
@@ -435,8 +449,9 @@ body {
 .coeurvide,
 .coeurplein {
   position: absolute;
-  top: 50%;
-  margin-top: -10.6px;
+  /*top: 50%;
+  margin-top: -10.6px;*/
+  bottom: 32px;
   right: 3%;
 }
 
@@ -444,16 +459,16 @@ body {
   color: transparent;
 }
 
-.coeur:hover .coeurvide {
-  -webkit-transition: all 2s;
-  transition: all 2s;
+.focus:focus .coeurvide {
+  -webkit-transition: all 1s;
+  transition: all 1s;
   color: transparent;
 }
 
-.coeur:hover .coeurplein {
-  -webkit-transition: all 2s;
-  transition: all 2s;
-  color: purple;
+.focus:focus .coeurplein {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  color: #9356dc;
 }
 
 .titre {
@@ -519,8 +534,8 @@ body {
   background-color: white;
   margin: 3%;
   border-radius: 15px;
-  -webkit-box-shadow: 2px 5px 3px #d4d3d3;
-          box-shadow: 2px 5px 3px #d4d3d3;
+  -webkit-box-shadow: 2px 5px 3px lightgray;
+          box-shadow: 2px 5px 3px lightgray;
   overflow: hidden;
   position: relative;
 }
@@ -618,7 +633,7 @@ body {
   padding: 1% 2%;
 }
 
-/*pas intéressant de mettre le footer en layout pour une seule page css sauf pour s'exercer*/
+/*pas intéressant de mettre le footer en layout pour une seule page css c'est pour s'exercer*/
 footer {
   color: white;
   background-color: #2f2f2f;
@@ -692,7 +707,7 @@ footer .liens a:hover {
   }
 }
 
-@media (min-width: 959px) {
+@media (min-width: 1148px) {
   .fonctionnement {
     display: -webkit-box;
     display: -ms-flexbox;

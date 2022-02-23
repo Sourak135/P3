@@ -2,8 +2,14 @@
 $primaire: #9356dc;
 $secondaire: #ff79da;
 $tertiaire: #99e2d0;
+/*$tertiaire: #73ccd8;*/ /*test couleur*/
+$fond: rgb(241, 241, 241);
+$ombre: rgb(211, 211, 211);
+$coeur1: transparent;
+$coeur2: black;
 
 /*breakpoints*/
 $tablette: 768px;
-$ordi: 959px;
+$ordi: 1148px; /*959px;*/
+
 /*variable transitions*/
