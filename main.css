@@ -5,61 +5,7 @@
 /*breakpoints*/
 /*959px;*/
 /*variable transitions*/
-@-webkit-keyframes load {
-  0% {
-    color: transparent;
-    font-size: 6vw;
-  }
-  50% {
-    color: #9356dc;
-    font-size: 6vw;
-  }
-  100% {
-    color: transparent;
-    font-size: 6vw;
-  }
-  /*
-  100% {
-    color: $secondaire;
-    font-size: 100px;
-  }
-  */
-}
-@keyframes load {
-  0% {
-    color: transparent;
-    font-size: 6vw;
-  }
-  50% {
-    color: #9356dc;
-    font-size: 6vw;
-  }
-  100% {
-    color: transparent;
-    font-size: 6vw;
-  }
-  /*
-  100% {
-    color: $secondaire;
-    font-size: 100px;
-  }
-  */
-}
-
 @-webkit-keyframes taille-div {
-  /*0% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  95% {
-    z-index: 4;
-  }
-  100% {
-    opacity: 0;
-    z-index: -1;
-  }*/
   from {
     height: 100vh;
   }
@@ -67,21 +13,7 @@
     height: 100vh;
   }
 }
-
 @keyframes taille-div {
-  /*0% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  95% {
-    z-index: 4;
-  }
-  100% {
-    opacity: 0;
-    z-index: -1;
-  }*/
   from {
     height: 100vh;
   }
@@ -114,28 +46,52 @@
   }
 }
 
-@-webkit-keyframes prix2 {
+@-webkit-keyframes loading_spinner {
   from {
-    width: 0%;
-    background-color: #99e2d0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    border-left: 6px double #9356dc;
+    border-right: 6px double #ff79da;
+    border-bottom: 6px double #99e2d0;
   }
   to {
-    width: 100%;
-    background-color: #99e2d0;
+    -webkit-transform: rotate(1080deg);
+            transform: rotate(1080deg);
+    border-left: 6px double #9356dc;
+    border-right: 6px double #ff79da;
+    border-bottom: 6px double #99e2d0;
   }
 }
 
+@keyframes loading_spinner {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    border-left: 6px double #9356dc;
+    border-right: 6px double #ff79da;
+    border-bottom: 6px double #99e2d0;
+  }
+  to {
+    -webkit-transform: rotate(1080deg);
+            transform: rotate(1080deg);
+    border-left: 6px double #9356dc;
+    border-right: 6px double #ff79da;
+    border-bottom: 6px double #99e2d0;
+  }
+}
+
+/*
 @keyframes prix2 {
-  from {
+  0% {
     width: 0%;
-    background-color: #99e2d0;
+    background-color: $tertiaire;
   }
-  to {
+  100% {
     width: 100%;
-    background-color: #99e2d0;
+    background-color: $tertiaire;
   }
 }
-
+*/
 /*polices*/
 @font-face {
   font-family: "roboto regular";
@@ -159,117 +115,32 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: transparent;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: white;
-  -webkit-animation: taille-div 2.6s;
-          animation: taille-div 2.6s;
+  -webkit-animation: taille-div 1.5s;
+          animation: taille-div 1.5s;
 }
 
-.chargement .centre {
-  position: absolute;
-  left: 30%;
-  /*margin-left: -3em;
-    left:50%;*/
-}
-
-.chargement span:nth-child(1) {
-  -webkit-animation: load 2.45s ease 50ms;
-          animation: load 2.45s ease 50ms;
-}
-
-.chargement span:nth-child(2) {
-  -webkit-animation: load 2.4s ease 100ms;
-          animation: load 2.4s ease 100ms;
-}
-
-.chargement span:nth-child(3) {
-  -webkit-animation: load 2.35s ease 150ms;
-          animation: load 2.35s ease 150ms;
-}
-
-.chargement span:nth-child(4) {
-  -webkit-animation: load 2.3s ease 200ms;
-          animation: load 2.3s ease 200ms;
-}
-
-.chargement span:nth-child(5) {
-  -webkit-animation: load 2.25s ease 250ms;
-          animation: load 2.25s ease 250ms;
-}
-
-.chargement span:nth-child(6) {
-  -webkit-animation: load 2.2s ease 300ms;
-          animation: load 2.2s ease 300ms;
-}
-
-.chargement span:nth-child(7) {
-  -webkit-animation: load 2.15s ease 350ms;
-          animation: load 2.15s ease 350ms;
-}
-
-.chargement span:nth-child(8) {
-  -webkit-animation: load 2.1s ease 400ms;
-          animation: load 2.1s ease 400ms;
-}
-
-.chargement span:nth-child(9) {
-  -webkit-animation: load 2.05s ease 450ms;
-          animation: load 2.05s ease 450ms;
-}
-
-.chargement span:nth-child(10) {
-  -webkit-animation: load 2s ease 500ms;
-          animation: load 2s ease 500ms;
+.chargement .spinner {
+  width: 100px;
+  height: 100px;
+  border: 6px solid transparent;
+  border-radius: 50%;
+  -webkit-animation: loading_spinner 1.4s linear;
+          animation: loading_spinner 1.4s linear;
 }
 
 header {
   position: relative;
+  /*placement fleche retour*/
 }
 
 body {
   margin: 0 auto;
   min-width: 375px;
   max-width: 1600px;
-}
-
-.entete {
-  position: relative;
-}
-
-.entete img {
-  width: 100%;
-  max-height: 400px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.chapeau {
-  text-align: center;
-  padding: 15px;
-  background-color: #f1f1f1;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  border-radius: 60px 60px 0 0;
-}
-
-.image-titre img {
-  position: relative;
-}
-
-.image-titre .fleche {
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  margin-top: -10px;
-  left: 5%;
-  color: black;
-}
-
-.image-titre .fleche:hover {
-  scale: 1.1;
-  -webkit-transition: all ease 0.2s;
-  transition: all ease 0.2s;
 }
 
 .image-titre {
@@ -279,6 +150,21 @@ body {
 .image-titre img {
   max-width: 40%;
   padding: 1% 0;
+}
+
+.image-titre .fleche {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  left: 5%;
+  color: black;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+
+.image-titre .fleche:hover {
+  scale: 1.1;
 }
 
 .localisation {
@@ -404,12 +290,12 @@ body {
   margin: 3%;
   border-radius: 15px;
   overflow: hidden;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
 }
 
 .restaurant__card:hover {
   scale: 1.01;
-  -webkit-transition: all ease 0.2s;
-  transition: all ease 0.2s;
   -webkit-box-shadow: 2px 5px 3px #a0a0a0;
           box-shadow: 2px 5px 3px #a0a0a0;
 }
@@ -443,7 +329,20 @@ body {
      object-fit: cover;
 }
 
+.restaurant__card .nouveau {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: #99e2d0;
+  color: #217460;
+  padding: 1% 2%;
+}
+
 /*position des coeurs vides et pleins l'un sur l'autre*/
+.coeur {
+  overflow: hidden;
+}
+
 .coeur .coeurvide,
 .coeur .coeurplein {
   position: absolute;
@@ -451,13 +350,8 @@ body {
   margin-top: -10.5px;
   right: 3%;
   font-size: 1.3em;
-  -webkit-transition: all 2s;
-  transition: all 2s;
-}
-
-.coeur .coeurvide {
-  z-index: 1;
-  background: white;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 .coeur .coeurplein {
@@ -465,43 +359,47 @@ body {
   -webkit-background-clip: text;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
   background-image: linear-gradient(#9356dc, #ff79da);
-  -webkit-transition: all 2s;
-  transition: all 2s;
   opacity: 0;
 }
 
 .coeur:hover .coeurvide {
-  color: transparent;
-  z-index: -1;
-  background-position: 0 -21px;
-  -webkit-transition: all 2s;
-  transition: all 2s;
+  opacity: 0;
 }
 
 .coeur:hover .coeurplein {
-  /*color: $primaire;*/
   opacity: 1;
 }
 
-.titre {
+.entete {
+  position: relative;
+}
+
+.entete .chapeau {
+  text-align: center;
+  padding: 15px;
+  background-color: #f1f1f1;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-radius: 60px 60px 0 0;
+}
+
+.entete img {
+  width: 100%;
+  max-height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.nom-restau-menu {
   background-color: #f1f1f1;
   position: relative;
   font-style: italic;
 }
 
-.titre h1 {
+.nom-restau-menu h1 {
   margin: 0 3%;
   padding: 0.67em;
-}
-
-.menu {
-  background-color: #f1f1f1;
-}
-
-.menu h2 {
-  margin: 1% 3%;
-  border-bottom: 3px #99e2d0 solid;
-  width: 2em;
 }
 
 .entree {
@@ -519,12 +417,22 @@ body {
           animation: apparition 1.5s;
 }
 
-.nourriture {
+.menu {
+  background-color: #f1f1f1;
+}
+
+.menu h2 {
+  margin: 1% 3%;
+  border-bottom: 3px #99e2d0 solid;
+  width: 2em;
+}
+
+.menu .nourriture {
   margin: 0;
   padding: 2% 0;
 }
 
-.nourriture .horizontal {
+.menu .nourriture .horizontal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -532,16 +440,16 @@ body {
   position: relative;
 }
 
-.nourriture .horizontal__position h3,
-.nourriture .horizontal p {
+.menu .nourriture .horizontal__position h3,
+.menu .nourriture .horizontal p {
   margin: 8px;
 }
 
-.nourriture .horizontal .prix {
+.menu .nourriture .horizontal .prix {
   margin: auto 2% 1em 0;
 }
 
-.nourriture .horizontal {
+.menu .nourriture .horizontal {
   height: 80px;
   background-color: white;
   margin: 3%;
@@ -552,7 +460,7 @@ body {
   position: relative;
 }
 
-.nourriture .horizontal__responsive {
+.menu .nourriture .horizontal__responsive {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -561,10 +469,10 @@ body {
           justify-content: space-between;
   width: 100%;
   min-width: 0;
-  /*solutionne bug entre flex et white-space:nowrap*/
+  /*solutionne bug entre flex et white-space:nowrap pour ellipsis*/
 }
 
-.nourriture .horizontal__responsive .horizontal__position {
+.menu .nourriture .horizontal__responsive .horizontal__position {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -575,41 +483,66 @@ body {
   max-width: 80%;
 }
 
-.nourriture .horizontal__responsive .horizontal__position h3,
-.nourriture .horizontal__responsive .horizontal__position p {
+.menu .nourriture .horizontal__responsive .horizontal__position h3,
+.menu .nourriture .horizontal__responsive .horizontal__position p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.nourriture .horizontal .survol2 {
-  right: 0;
-  width: 0%;
-  max-width: 5em;
+.menu .nourriture .horizontal__responsive .prix {
+  font-weight: bold;
+}
+
+.menu .nourriture .horizontal .survol2 {
+  right: -5em;
+  width: 0em;
   height: 100%;
   position: relative;
-}
-
-.nourriture .horizontal .survol2 i {
-  color: white;
-  font-size: 2em;
-}
-
-.nourriture .horizontal:hover .survol2 {
-  -webkit-animation: prix2 1s linear forwards;
-          animation: prix2 1s linear forwards;
-}
-
-.nourriture .horizontal:hover .survol2 i {
-  position: absolute;
-  top: 50%;
-  margin-top: -23px;
-  width: 100%;
-  text-align: center;
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  background-color: #99e2d0;
+  /* bout code avec animation prix2
+        right: 0;
+        width: 0%;
+        max-width: 5em;
+        height: 100%;
+        position: relative;
+        */
+}
+
+.menu .nourriture .horizontal .survol2 i {
+  color: white;
+  font-size: 2em;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  width: 100%;
+  text-align: center;
+}
+
+.menu .nourriture .horizontal:hover {
+  /* fonctionne mais animation prix2 coupe quand plus de survol
+        .survol2 {
+          animation: prix2 1s linear forwards;
+          forwards pour pas que ça disparaisse tant que la souris est dessus i {
+            transform: rotate(360deg);
+          }
+        }
+        */
+}
+
+.menu .nourriture .horizontal:hover .survol2 {
+  -webkit-transform: translateX(-5em);
+          transform: translateX(-5em);
+  width: 5em;
+}
+
+.menu .nourriture .horizontal:hover .survol2 i {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
 .commande {
@@ -632,15 +565,6 @@ body {
   background: linear-gradient(178deg, #fface8, #ae80e5);
   -webkit-box-shadow: 2px 5px 3px #a29f9f;
           box-shadow: 2px 5px 3px #a29f9f;
-}
-
-.nouveau {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  background-color: #99e2d0;
-  color: #217460;
-  padding: 1% 2%;
 }
 
 /*pas intéressant de mettre le footer en layout pour une seule page css c'est pour s'exercer*/

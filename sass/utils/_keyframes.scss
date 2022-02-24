@@ -1,38 +1,4 @@
-@keyframes load {
-  0% {
-    color: transparent;
-    font-size: 6vw;
-  }
-
-  50% {
-    color: $primaire;
-    font-size: 6vw;
-  }
-  100% {
-    color: transparent;
-    font-size: 6vw;
-  }
-  /*
-  100% {
-    color: $secondaire;
-    font-size: 100px;
-  }
-  */
-}
 @keyframes taille-div {
-  /*0% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  95% {
-    z-index: 4;
-  }
-  100% {
-    opacity: 0;
-    z-index: -1;
-  }*/
   from {
     height: 100vh;
   }
@@ -52,13 +18,31 @@
     opacity: 1;
   }
 }
-@keyframes prix2 {
+
+@keyframes loading_spinner {
   from {
+    transform: rotate(0);
+    border-left: 6px double $primaire;
+    border-right: 6px double $secondaire;
+    border-bottom: 6px double $tertiaire;
+  }
+  to {
+    transform: rotate(1080deg);
+    border-left: 6px double $primaire;
+    border-right: 6px double $secondaire;
+    border-bottom: 6px double $tertiaire;
+  }
+}
+
+/*
+@keyframes prix2 {
+  0% {
     width: 0%;
     background-color: $tertiaire;
   }
-  to {
+  100% {
     width: 100%;
     background-color: $tertiaire;
   }
 }
+*/

@@ -15,80 +15,32 @@
   height: 0px;
   display: flex;
   align-items: center;
-  color: transparent;
+  justify-content: center;
   background-color: white;
-  animation: taille-div 2.6s;
-  .centre {
-    position: absolute;
-    left: 30%;
-    /*margin-left: -3em;
-    left:50%;*/
-  }
-
-  span {
-    &:nth-child(1) {
-      animation: load 2.45s ease 50ms;
-    }
-    &:nth-child(2) {
-      animation: load 2.4s ease 100ms;
-    }
-    &:nth-child(3) {
-      animation: load 2.35s ease 150ms;
-    }
-    &:nth-child(4) {
-      animation: load 2.3s ease 200ms;
-    }
-    &:nth-child(5) {
-      animation: load 2.25s ease 250ms;
-    }
-    &:nth-child(6) {
-      animation: load 2.2s ease 300ms;
-    }
-    &:nth-child(7) {
-      animation: load 2.15s ease 350ms;
-    }
-    &:nth-child(8) {
-      animation: load 2.1s ease 400ms;
-    }
-    &:nth-child(9) {
-      animation: load 2.05s ease 450ms;
-    }
-    &:nth-child(10) {
-      animation: load 2s ease 500ms;
-    }
+  animation: taille-div 1.5s;
+  .spinner {
+    width: 100px;
+    height: 100px;
+    border: 6px solid transparent;
+    border-radius: 50%;
+    animation: loading_spinner 1.4s linear;
   }
 }
 
 header {
-  position: relative;
+  position: relative; /*placement fleche retour*/
 }
-
 body {
   margin: 0 auto;
   min-width: 375px;
   max-width: 1600px;
 }
-.entete {
-  position: relative;
-}
-.entete img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-}
-.chapeau {
-  text-align: center;
-  padding: 15px;
-  background-color: $fond;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  border-radius: 60px 60px 0 0;
-}
 
 .image-titre {
+  text-align: center;
   img {
-    position: relative;
+    max-width: 40%;
+    padding: 1% 0;
   }
   .fleche {
     font-size: 20px;
@@ -97,19 +49,13 @@ body {
     margin-top: -10px;
     left: 5%;
     color: black;
+    transition: all ease 0.2s;
     &:hover {
       scale: 1.1;
-      transition: all ease 0.2s;
     }
   }
 }
-.image-titre {
-  text-align: center;
-  img {
-    max-width: 40%;
-    padding: 1% 0;
-  }
-}
+
 .localisation {
   background-color: rgb(233, 233, 233);
   display: flex;
@@ -195,9 +141,9 @@ body {
     margin: 3%;
     border-radius: 15px;
     overflow: hidden;
+    transition: all ease 0.2s;
     &:hover {
       scale: 1.01;
-      transition: all ease 0.2s;
       box-shadow: 2px 5px 3px darken($ombre, 20%);
     }
     a {
@@ -205,15 +151,24 @@ body {
       color: black;
       @include horizontal;
     }
-  }
-  &__card img {
-    width: 100%;
-    height: 70%;
-    object-fit: cover;
+    img {
+      width: 100%;
+      height: 70%;
+      object-fit: cover;
+    }
+    .nouveau {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      background-color: $tertiaire;
+      color: darken($tertiaire, 45%);
+      padding: 1% 2%;
+    }
   }
 }
 /*position des coeurs vides et pleins l'un sur l'autre*/
 .coeur {
+  overflow: hidden;
   .coeurvide,
   .coeurplein {
     position: absolute;
@@ -221,34 +176,43 @@ body {
     margin-top: -10.5px;
     right: 3%;
     font-size: 1.3em;
-    transition: all 2s;
-  }
-  .coeurvide {
-    z-index: 1;
-    background: white;
+    transition: all 1s;
   }
   .coeurplein {
     color: transparent;
     -webkit-background-clip: text;
     background-image: linear-gradient($primaire, $secondaire);
-    transition: all 2s;
     opacity: 0;
   }
   &:hover {
     .coeurvide {
-      color: transparent;
-      z-index: -1;
-      background-position: 0 -21px;
-      transition: all 2s;
+      opacity: 0;
     }
     .coeurplein {
-      /*color: $primaire;*/
       opacity: 1;
     }
   }
 }
 
-.titre {
+.entete {
+  position: relative;
+  .chapeau {
+    text-align: center;
+    padding: 15px;
+    background-color: $fond;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 60px 60px 0 0;
+  }
+  img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+  }
+}
+
+.nom-restau-menu {
   background-color: $fond;
   position: relative;
   font-style: italic;
@@ -257,15 +221,6 @@ body {
     padding: 0.67em;
   }
 }
-.menu {
-  background-color: $fond;
-  h2 {
-    margin: 1% 3%;
-    border-bottom: 3px $tertiaire solid;
-    width: 2em;
-  }
-}
-
 .entree {
   animation: apparition 0.5s;
 }
@@ -275,60 +230,89 @@ body {
 .dessert {
   animation: apparition 1.5s;
 }
+.menu {
+  background-color: $fond;
+  h2 {
+    margin: 1% 3%;
+    border-bottom: 3px $tertiaire solid;
+    width: 2em;
+  }
+  .nourriture {
+    @include horizontal;
+    margin: 0;
+    padding: 2% 0;
+    .horizontal {
+      height: 80px;
+      background-color: white;
+      margin: 3%;
+      border-radius: 15px;
+      box-shadow: 2px 5px 3px $ombre;
+      overflow: hidden;
+      position: relative;
 
-.nourriture {
-  @include horizontal;
-  margin: 0;
-  padding: 2% 0;
-  .horizontal {
-    height: 80px;
-    background-color: white;
-    margin: 3%;
-    border-radius: 15px;
-    box-shadow: 2px 5px 3px $ombre;
-    overflow: hidden;
-    position: relative;
-
-    &__responsive {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      min-width: 0; /*solutionne bug entre flex et white-space:nowrap*/
-      .horizontal__position {
+      &__responsive {
         display: flex;
-        flex-direction: column;
-        max-width: 80%;
-        h3,
-        p {
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
+        justify-content: space-between;
+        width: 100%;
+        min-width: 0; /*solutionne bug entre flex et white-space:nowrap pour ellipsis*/
+        .horizontal__position {
+          display: flex;
+          flex-direction: column;
+          max-width: 80%;
+          h3,
+          p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+        .prix {
+          font-weight: bold;
         }
       }
-    }
-    .survol2 {
-      right: 0;
-      width: 0%;
-      max-width: 5em;
-      height: 100%;
-      position: relative;
-      i {
-        color: white;
-        font-size: 2em;
-      }
-    }
-    &:hover {
       .survol2 {
-        animation: prix2 1s linear forwards;
+        right: -5em;
+        width: 0em;
+        height: 100%;
+        position: relative;
+        transition: all 0.5s;
+        background-color: $tertiaire;
+
         i {
+          color: white;
+          font-size: 2em;
+          transition: all 0.5s ease-out;
           position: absolute;
           top: 50%;
-          margin-top: -23px;
+          margin-top: -16px;
           width: 100%;
           text-align: center;
-          transform: rotate(360deg);
-          transition: all 0.5s;
         }
+        /* bout code avec animation prix2
+        right: 0;
+        width: 0%;
+        max-width: 5em;
+        height: 100%;
+        position: relative;
+        */
+      }
+      &:hover {
+        .survol2 {
+          transform: translateX(-5em);
+          width: 5em;
+          i {
+            transform: rotate(360deg);
+          }
+        }
+
+        /* fonctionne mais animation prix2 coupe quand plus de survol
+        .survol2 {
+          animation: prix2 1s linear forwards;
+          forwards pour pas que ça disparaisse tant que la souris est dessus i {
+            transform: rotate(360deg);
+          }
+        }
+        */
       }
     }
   }
@@ -339,15 +323,6 @@ body {
   text-align: center;
   margin: 3% auto 0 auto;
   padding: 40px 0 70px 0;
-}
-
-.nouveau {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  background-color: $tertiaire;
-  color: darken($tertiaire, 45%);
-  padding: 1% 2%;
 }
 
 /*pas intéressant de mettre le footer en layout pour une seule page css c'est pour s'exercer*/
