@@ -164,7 +164,8 @@ body {
 }
 
 .image-titre .fleche:hover {
-  scale: 1.1;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .localisation {
@@ -224,7 +225,6 @@ body {
 
 .fonctionnement h2 {
   margin: auto 1em;
-  padding: 0 px;
 }
 
 .fonctionnement .bouton {
@@ -295,7 +295,8 @@ body {
 }
 
 .restaurant__card:hover {
-  scale: 1.01;
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
   -webkit-box-shadow: 2px 5px 3px #a0a0a0;
           box-shadow: 2px 5px 3px #a0a0a0;
 }

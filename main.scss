@@ -51,7 +51,7 @@ body {
     color: black;
     transition: all ease 0.2s;
     &:hover {
-      scale: 1.1;
+      transform: scale(1.1);
     }
   }
 }
@@ -86,7 +86,6 @@ body {
   margin: 2em 3%;
   h2 {
     margin: auto 1em;
-    padding: 0 px;
   }
   .bouton {
     position: relative;
@@ -143,7 +142,7 @@ body {
     overflow: hidden;
     transition: all ease 0.2s;
     &:hover {
-      scale: 1.01;
+      transform: scale(1.01);
       box-shadow: 2px 5px 3px darken($ombre, 20%);
     }
     a {
