@@ -341,7 +341,7 @@ body {
 
 /*position des coeurs vides et pleins l'un sur l'autre*/
 .coeur {
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .coeur .coeurvide,
